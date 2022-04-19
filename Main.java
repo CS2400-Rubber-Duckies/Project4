@@ -7,13 +7,17 @@ public static void main(String[] args){
     try{
         ArrayList<Integer> readArray = new ArrayList<Integer>() ;
         File file = new File("/Users/gelilachaka/downloads/data_random.txt");
-        Scanner reader = new Scanner(file);
-        while (reader.hasNextInt()){
-        readArray.add(reader.nextInt());
+        Scanner myreader = new Scanner(file);
+        while (myreader.hasNextInt()){
+        readArray.add(myreader.nextInt());
         }
+int[] HeapArray = new int[readArray.size()];
+for (int i =0;i< readArray.size();i++){
+    HeapArray[i] = readArray.get(i);
+     MaxHeap h = new MaxHeap();
 
-
-
+     
+}
 
     }
 
