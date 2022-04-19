@@ -19,6 +19,8 @@ public static void main(String[] args){
     Optimal(OptimalHeap);
 
 }
+
+
   static ArrayList<Integer>listNum(){
     ArrayList<Integer> readArray = new ArrayList<Integer>() ;
     try{
