@@ -15,11 +15,17 @@ public final class MaxHeap<T extends Comparable<? super T>>
    private boolean integrityOK = false;
 	private static final int DEFAULT_CAPACITY = 25;
 	private static final int MAX_CAPACITY = 10000;
+   public int SequencialSwaps;
+   public int OptimalSwaps;
    
     private void checkCapacity(int desiredCapacity){
         if(desiredCapacity > MAX_CAPACITY)
             throw new IllegalStateException("Error: capacity exceeds ");
     }
+    public void FirstTenEntry() {
+      for (int i = 1; i < 11; i++) {
+          System.out.print(heap[i] + " ");
+      }}
     
    public MaxHeap()
    {
@@ -79,6 +85,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
          heap[rootIndex] = heap[largerChildIndex];
          rootIndex = largerChildIndex;
          leftChildIndex = 2 * rootIndex;
+         OptimalSwaps++;
       }
       else
          done = true;
@@ -97,6 +104,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
        heap[newIndex] = heap[parentIndex];
        newIndex = parentIndex;
        parentIndex = newIndex / 2;
+       SequencialSwaps++;
     } // end while
  
     heap[newIndex] = newEntry;

@@ -57,7 +57,7 @@ static void Sequencial(MaxHeap<Integer> heap){
 }
 
 static void Optimal(MaxHeap<Integer> heap){
-   
+        System.out.println();
         System.out.print("Heap built using optimal method: ");
         heap.FirstTenEntry();
         System.out.println();
