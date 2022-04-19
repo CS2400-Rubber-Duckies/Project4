@@ -38,12 +38,39 @@ catch(IOException e){
 }
 
 static void Sequencial(MaxHeap<Integer> heap){
+    System.out.print("Heap built using sequential insertions: ");
+    heap.FirstTenEntry();
+    System.out.println();
+
+    System.out.print("Number of swaps in the heap creation: " + heap.SequencialSwaps);
+    System.out.println();
+
+    // Remove first 10 and print
+    for (int i = 0; i < 10; i++) {
+        heap.removeMax();
+    }
+    System.out.print("Heap after 10 removals: ");
+    heap.FirstTenEntry();
 
 
 
 }
 
 static void Optimal(MaxHeap<Integer> heap){
+   
+        System.out.print("Heap built using optimal method: ");
+        heap.FirstTenEntry();
+        System.out.println();
+
+        System.out.print("Number of swaps in the heap creation: " + heap.OptimalSwaps);
+        System.out.println();
+
+        // Remove first 10 and print
+        for (int i = 0; i < 10; i++) {
+            heap.removeMax();
+        }
+        System.out.print("Heap after 10 removals: ");
+        heap.FirstTenEntry();
 
 }
 }
