@@ -3,9 +3,9 @@ import java.util.Arrays;
 /**
    A class that implements the ADT maxheap by using an array.
  
-   @author Frank M. Carrano
-   @author Timothy M. Henry
-   @version 5.0
+   @author 
+   @author 
+   @version 
 */
 public final class MaxHeap<T extends Comparable<? super T>>
              implements MaxHeapInterface<T>
@@ -16,6 +16,11 @@ public final class MaxHeap<T extends Comparable<? super T>>
 	private static final int DEFAULT_CAPACITY = 25;
 	private static final int MAX_CAPACITY = 10000;
    
+    private void checkCapacity(int desiredCapacity){
+        if(desiredCapacity > MAX_CAPACITY)
+            throw new IllegalStateException("Error: capacity exceeds ");
+    }
+    
    public MaxHeap()
    {
       this(DEFAULT_CAPACITY); // Call next constructor
@@ -84,7 +89,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
 
    public void add(T newEntry)
    {
-    checkIntegrity();        // Ensure initialization of data fields
+         // Ensure initialization of data fields
     int newIndex = lastIndex + 1;
     int parentIndex = newIndex / 2;
     while ( (parentIndex > 0) && newEntry.compareTo(heap[parentIndex]) > 0)
@@ -96,13 +101,13 @@ public final class MaxHeap<T extends Comparable<? super T>>
  
     heap[newIndex] = newEntry;
     lastIndex++;
-    ensureCapacity();
+    checkCapacity(heap.length);
    // See Segment 27.8.
    } // end add
 
    public T removeMax()
    {
-    checkIntegrity();             // Ensure initialization of data fields
+              // Ensure initialization of data fields
     T root = null;
  
     if (!isEmpty())
@@ -119,7 +124,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
 
    public T getMax()
    {
-		checkIntegrity();
+	
       T root = null;
       if (!isEmpty())
          root = heap[1];
@@ -138,7 +143,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
 
    public void clear()
    {
-		checkIntegrity();
+		
       while (lastIndex > -1)
       {
          heap[lastIndex] = null;
