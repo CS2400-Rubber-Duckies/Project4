@@ -29,7 +29,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
 
    public void FirstTenEntry() {
       for (int i = 1; i < 11; i++) {
-         System.out.print(heap[i] + " ");
+         System.out.print(heap[i] + ", ");
       }
    }
 

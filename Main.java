@@ -62,10 +62,11 @@ public class Main {
     }
 
     static void Optimal(MaxHeap<Integer> heap) throws FileNotFoundException {
-        File file = new File("output.txt");
-        PrintStream stream = new PrintStream(file);
-        System.setOut(stream);
+        // File file = new File("output.txt");
+        // PrintStream stream = new PrintStream(file);
+        // System.setOut(stream);
 
+        System.out.println();
         System.out.println();
         System.out.print("Heap built using optimal method: ");
         heap.FirstTenEntry();
