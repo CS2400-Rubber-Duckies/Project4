@@ -24,7 +24,7 @@ public class Main {
     static ArrayList<Integer> listNum() {
         ArrayList<Integer> readArray = new ArrayList<Integer>();
         try {
-            File file = new File("/Users/gelilachaka/downloads/data_random.txt");
+            File file = new File("data_random.txt");
             Scanner myreader = new Scanner(file);
             while (myreader.hasNextInt()) {
                 readArray.add(Integer.parseInt(myreader.nextLine()));
