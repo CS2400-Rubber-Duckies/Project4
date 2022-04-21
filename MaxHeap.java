@@ -1,5 +1,5 @@
 
-import java.util.Arrays;
+// import java.util.Arrays;
 import java.io.FileWriter;
 import java.io.File;
 import java.io.IOException;
@@ -20,6 +20,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
    private static final int MAX_CAPACITY = 10000;
    public int SequencialSwaps;
    public int OptimalSwaps;
+   private String[] arr;
 
    private void checkCapacity(int desiredCapacity) {
       if (desiredCapacity > MAX_CAPACITY)
@@ -149,7 +150,7 @@ public final class MaxHeap<T extends Comparable<? super T>>
    } // end clear
 
    // Private methods
-   public void printHeap(String filename) {
+   public void printHeap(String filename) throws IOException {
 
       File file = new File(filename);
       FileWriter writer = new FileWriter(file);
