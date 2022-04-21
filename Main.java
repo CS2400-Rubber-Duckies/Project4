@@ -1,10 +1,12 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         ArrayList<Integer> readArray = Main.listNum();
         MaxHeap<Integer> maxHeap = new MaxHeap<Integer>(100);
@@ -38,7 +40,11 @@ public class Main {
         return readArray;
     }
 
-    static void Sequencial(MaxHeap<Integer> heap) {
+    static void Sequencial(MaxHeap<Integer> heap) throws FileNotFoundException {
+        File file = new File("output.txt");
+        PrintStream stream = new PrintStream(file);
+        System.setOut(stream);
+
         System.out.print("Heap built using sequential insertions: ");
         heap.FirstTenEntry();
         System.out.println();
@@ -55,7 +61,11 @@ public class Main {
 
     }
 
-    static void Optimal(MaxHeap<Integer> heap) {
+    static void Optimal(MaxHeap<Integer> heap) throws FileNotFoundException {
+        File file = new File("output.txt");
+        PrintStream stream = new PrintStream(file);
+        System.setOut(stream);
+
         System.out.println();
         System.out.print("Heap built using optimal method: ");
         heap.FirstTenEntry();
